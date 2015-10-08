@@ -1,0 +1,43 @@
+<%= form_for @contact do |f| %>
+
+  <% if @contact.errors.any? %>
+   <ul>
+   	   <% for msg in @contact.errors.full_messages %>
+   	   <li><%= msg %></li>
+   	   <% end %>
+   </ul>
+   <% end %>
+
+    <label>Name:</label><br/>
+	<%= f.text_field :name %><br/>
+
+    <label>AGE:</label><br/>
+	<%= f.text_field :age %><br/>
+	
+	<label>Mobile Number:</label><br/>
+	+91-<%= f.text_field :mobile_no %><br/>
+
+	<label>Email:</label><br/>
+	<%= f.email_field :email %><br/>
+
+	<label>Occupation:</label><br/>
+	<%= f.select :occupation,["Student","Employee"],prompt:"select_Occupation"%><br/>
+
+	<label>Designation:</label><br/>
+	<%= f.text_field :designation %><br/>
+	
+	<label>Company Name:</label><br/>
+	<%= f.text_field :company_name %><br/>
+	
+	<label>College Name:</label><br/>
+	<%= f.text_field :college_name %><br/>
+	
+	<label>Course:</label><br/>
+	<%= f.text_field :course %><br/>
+	
+	<label>Semester:</label><br/>
+	<%= f.text_field :semester %><br/><br/>
+
+	<input type="submit" class="btn btn-info" value="Create Contact">
+	
+<% end %>

@@ -1,0 +1,39 @@
+<h1>Contact details</h1>
+  <div class="table-responsive">          
+  <table class="table" border="1">
+	<thead>
+		<tr>
+            <th>Name</th>
+            <th>AGE</th>
+            <th>Email</th>
+            <th>Mobile No</th>
+            <th>Occupation</th>
+            <th>Designation</th>
+            <th>Copmany Name</th>
+            <th>College Name</th>
+            <th>Course</th>
+            <th>Semester</th>
+            <th>Actions </th>
+		</tr>
+	</thead>
+		<tbody>
+			<tr>
+				<td><%= @contact.name %></td>
+				<td><%= @contact.age %></td>
+                <td><%= @contact.email %></td>
+                <td><%= @contact.mobile_no %></td>
+                <td><%= @contact.occupation%></td>
+				<td><%= @contact.designation %></td>
+				<td><%= @contact.company_name %></td>
+				<td><%= @contact.college_name %></td>
+				<td><%= @contact.course %></td>
+				<td><%= @contact.semester %></td>
+				<td> <% if can? :update, @contact %>
+					<%= link_to "Edit",edit_contact_path(@contact.id) %> <% end %>|
+					<% if can? :destroy, @contact %>
+					<%= link_to "Delete",contact_path(@contact.id), method: :delete,data:{confirm: "Are you sure"}%> <% end %> |
+					<%= link_to "Back", contacts_path %></td>
+			</tr>
+		</tbody>	
+</table>
+</div>
