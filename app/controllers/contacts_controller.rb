@@ -2,6 +2,7 @@ class ContactsController < ApplicationController
   
   before_filter :authenticate_user!
   
+  before_action :load_contact, only: :create
   load_and_authorize_resource
   
   def index
@@ -54,4 +55,9 @@ class ContactsController < ApplicationController
   def contact_params
       params[:contact].permit(:name, :age, :mobile_no, :email, :occupation, :designation, :company_name, :college_name, :course, :semester)    
   end
+  
+  def load_contact
+      @contact = Contact.new(contact_params)
+  end
+  
 end

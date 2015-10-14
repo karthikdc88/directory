@@ -8,35 +8,62 @@
    </ul>
    <% end %>
 
-    <label>Name:</label><br/>
-	<%= f.text_field :name %><br/>
+<form class="container">
 
+	<div class="row">
+	
+	<div class="col-md-6">
+    <label>Name:</label><br/>
+	<span class="highlight"><%= f.text_field :name %></span><br/>
+	</div>
+
+    <div class="col-md-6">
     <label>AGE:</label><br/>
 	<%= f.text_field :age %><br/>
+	</div>
 	
+	<div class="col-md-6">
 	<label>Mobile Number:</label><br/>
-	+91-<%= f.text_field :mobile_no %><br/>
+	<%= f.text_field :mobile_no %><br/>
+	</div>
 
+	<div class="col-md-6">
 	<label>Email:</label><br/>
 	<%= f.email_field :email %><br/>
+	</div>
 
+	<div class="col-md-6">
 	<label>Occupation:</label><br/>
 	<%= f.select :occupation,["Student","Employee"],prompt:"select_Occupation"%><br/>
+	</div>
 
+	<div class="col-md-6">
 	<label>Designation:</label><br/>
 	<%= f.text_field :designation %><br/>
+	</div>
 	
+	<div class="col-md-6">
 	<label>Company Name:</label><br/>
 	<%= f.text_field :company_name %><br/>
+	</div>
 	
+	<div class="col-md-6">
 	<label>College Name:</label><br/>
 	<%= f.text_field :college_name %><br/>
+	</div>
 	
+	<div class="col-md-6">
 	<label>Course:</label><br/>
 	<%= f.text_field :course %><br/>
+	</div>
 	
+	<div class="col-md-6">
 	<label>Semester:</label><br/>
 	<%= f.text_field :semester %><br/><br/>
+	</div>
+	
+	</div>
+</form>
 
 	<input type="submit" class="btn btn-info" value="Create Contact">
 	
